@@ -14,31 +14,67 @@ new Ext.Application({
 /*
  * Handlers
  */
+var rootPanel;
+var tapHander;
+var tapHanderTrue;
+var tapHanderFalse;
+var cardViewClickHandler;
+var one ;
+var carussel;
+var backBtn;
+var learningItemsTrueBtn;
+var learningItemsFalseBtn;
+var backToolbar;
+var learningItemsBtn;
+var cardViewItem1;
+var cardViewItem2;
+var learningItemsFront;
+var learnPanel;
+var cardOverview;
+var main;
+Ext.setup({
+	phoneStartupScreen: 'phone_startup.png',
+	icon: 'icon.png',
+	onReady: function() {
+		rootPanel = new Ext.Panel({
+			fullscreen: true,
+			layout: 'card',
+			items: [one]
+		});
+
+		$('#lernWords').live('click', function(){
+			rootPanel.setActiveItem(cardOverview);
+		});
+		if(!Ext.is.iPhone){
+			Ext.Msg.alert("Iphone", "This app is specially designed for iOS");
+		}
+		
+		
 var tapHander = function(button, event) {
 	rootPanel.setActiveItem(main, {
                 type: 'slide',
                 reverse: true
             });
 }
-var tapHanderTrue = function(button, event) {
+tapHanderTrue = function(button, event) {
 	rootPanel.setActiveItem(learningItemsFront, {
                 type: 'slide',
             });
 }
-var tapHanderFalse = function(button, event) {
+tapHanderFalse = function(button, event) {
 	rootPanel.setActiveItem(learningItemsFront, {
                 type: 'slide',
                 reverse: true
             });
 }
-var cardViewClickHandler = function(button, event) {
+cardViewClickHandler = function(button, event) {
 		rootPanel.setActiveItem(main, {
                 type: 'slide',
                 reverse: true
             });
 }
 
-var one = {
+one = {
 	style: "background: url('img/background.png')",
 	title: "one",
 	html: '<div id="lernWords"><img class="intro" src="img/learnWordsBig.png"/></div><div id="readTexts"><img class="intro" src="img/readTextBig.png"/></div>'
@@ -62,7 +98,7 @@ var four = {
 var multiple = {
 	
 }
-var carussel = new Ext.Carousel({
+carussel = new Ext.Carousel({
 	cardSwitchAnimation: 'slide',
 	fullscreen:true,
 	items: [three, four]
@@ -77,12 +113,12 @@ var carussel = new Ext.Carousel({
  */
 // Items ( demo items)
 
-var backBtn = {
+backBtn = {
 	text: 'backs',
 	ui:'back',
 	handler: tapHander	
 }
-var learningItemsTrueBtn = {
+learningItemsTrueBtn = {
 	text: 'I knew it',
 	ui:'confirm',
 	handler: tapHanderTrue		
@@ -173,29 +209,12 @@ var main = new Ext.Panel({
 		});
 
 
-var rootPanel;
+
 
 function emptyFn(){
 	
 }
 
-Ext.setup({
-	phoneStartupScreen: 'phone_startup.png',
-	icon: 'icon.png',
-	onReady: function() {
-		rootPanel = new Ext.Panel({
-			fullscreen: true,
-			layout: 'card',
-			items: [one]
-		});
-
-		$('#lernWords').live('click', function(){
-			rootPanel.setActiveItem(cardOverview);
-		});
-		if(!Ext.is.iPhone){
-			Ext.Msg.alert("Iphone", "This app is specially designed for iOS");
-		}
-		
 	}
 	
 });
