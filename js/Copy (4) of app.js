@@ -27,14 +27,6 @@ var backBtnToOverview = function(button, event) {
             });
 }
 
-var backBtnToOverviewTextHandler = function(button, event) {
-	rootPanel.setActiveItem(textOverview, {
-                type: 'slide',
-                reverse: true
-            });
-}
-
-
 var tapHanderTrue = function(button, event) {
 	rootPanel.setActiveItem(learningItemsFront, {
                 type: 'slide',
@@ -56,8 +48,8 @@ var cardViewClickHandler = function(button, event) {
 var one = {
 	style: "background: url('img/background.png')",
 	title: "one",
-	html: '<div id="wrapper"><div id="lernWords"><img class="intro" src="img/learnWordsBig.png"/></div><div id="readTexts"><img class="intro" src="img/readTextNewBig.png"/></div></div>',
-	
+	html: '<div id="lernWords"><img class="intro" src="img/learnWordsBig.png"/></div><div id="readTexts"><img class="intro" src="img/readTextBig.png"/></div>'
+	//html: '<img src="img/learnWordsBig.png"/><p><img src="img/learnWordsBig.png"/> ',
 };
 var two = {
 	style: "background-color: #FFBF00, color:white",
@@ -103,12 +95,6 @@ var backBtnToOverview = {
 	ui:'back',
 	handler: backBtnToOverview	
 }
-
-var backBtnToOverviewText = {
-	text: 'quit reading',
-	ui:'back',
-	handler: backBtnToOverviewTextHandler	
-}
 var learningItemsTrueBtn = {
 	text: 'I knew it',
 	ui:'confirm',
@@ -132,14 +118,6 @@ var backToolbarToOverview = {
 	items: [backBtnToOverview],
 	dock: 'top'
 };
-
-var backToolbarToOverviewText = {
-	xtype: 'toolbar',
-	ui:'light',
-	items: [backBtnToOverviewText],
-	dock: 'top'
-};
-
 var learningItemsBtn = {
 	xtype: 'toolbar',
 	ui:'light',
@@ -152,7 +130,7 @@ var learningItemsBtn = {
 var cardViewItem1 = {
 	style : 'background: url("img/background.png")',
 	title: "card",
-	html: '<div id="showCardCreate"><img class="landscape-overview" src="img/CardOverviewBackground.png"/></div><section><title>Labas</title><details>Keistas</details></section>',
+	html: '<div id="showCardCreate"><img class="intro" src="img/CardOverviewBackground.png"/></div><section><title>Labas</title><details>Keistas</details></section></div>',
 	listeners: {
 		click: {
 			element: 'body', //element: 'el', //bind to the underlying el property on the panel
@@ -168,46 +146,19 @@ var cardViewItem1 = {
 var cardViewItem2 = {
 	style : 'background: url("img/background.png")',
 	title: "card",
-	html: '<div id="showCardCreate"><img class="landscape-overview" src="img/CardOverviewBackground.png"/></div><section><title>Labas</title><details>Keistas</details></section>'
+	html: '<div id="showCardCreate"><img class="intro" src="img/CardOverviewBackground.png"/></div><section><title>Labas</title><details>Keistas</details></section></div>'
 };
-
-var textViewItem1 = {
-	style : 'background: url("img/background.png")',
-	title: "card",
-	html: '<div id="textViewItem"><img class="landscape-overview" src="img/ReadTextNewBigBg.png"/></div><section><title>Labas</title><details>Keistas</details></section>'
-};
-var textViewItem2 = {
-	style : 'background: url("img/background.png")',
-	title: "card",
-	html: '<div id="textViewItem"><img class="landscape-overview" src="img/ReadTextNewBigBg.png"/></div><section><title>Labas</title><details>Keistas</details></section>'
-};
-var toolbarAddWord = {
-	html: '<div id="btn">+</div><div id="text">the text</div>',
-	dock: 'top'
-}
-
-var readingTextTextItself = {
-	html : '<div>The big long text</div>',
-}
-
-var readingTextView = new Ext.Panel({
-	fullscreen : true,
-	items : [readingTextTextItself],
-	dockedItems : [backToolbarToOverviewText, toolbarAddWord]
-	
-});
-
-
 
 var learningItemsFront = {
-	layout : 'card',
+	style : 'background: url("img/background.png")',
+	//layout : 'card',
 	title: "card",
-html: '<div id="showCardCreate"><img class="landscape-overview" src="img/learningWordsBig.png"/></div><section class="asking"><title>Labas</title><details>Karte lernen</details></section>',	
+	html: '<div id="showCardCreate"><img class="intro" src="img/learningWordsBig.png"/></div><section><title>Labas</title><details>Karte lernen</details></section></div>',	
 	listeners: {
 		'render': function(panel) {
                 panel.getEl().on({
                     'click': function() {
-							$('details').text('hello');
+							//$('#showCardCreate > details').text('hello');
 					},
 					'swipe':function() {
 						
@@ -223,7 +174,6 @@ html: '<div id="showCardCreate"><img class="landscape-overview" src="img/learnin
 // Overview of the cards
 var learnPanel = new Ext.Panel({
 	fullscreen:true,
-    style : 'background: url("img/background.png")',
 	items: [learningItemsFront],
 	dockedItems: [backToolbarToOverview,learningItemsBtn]
 });
@@ -240,26 +190,6 @@ var cardOverview = new Ext.Carousel({
                 type: 'slide',
                 reverse: true
        		}
-			);
-			}
-		}
-	}
-});
-
-var textOverview = new Ext.Carousel({
-	cardSwitchAnimation: 'slide',
-	items : [textViewItem1,textViewItem2],
-	dockedItems: [backToolbarToMenu],
-	listeners: {
-		click: {
-			element: 'body', //element: 'el', //bind to the underlying el property on the panel
-			fn: function(){
-				console.log('click items');
-				//TODO: set active panel
-				rootPanel.setActiveItem(readingTextView, {
-                	type: 'slide',
-               		reverse: false
-       			}
 			);
 			}
 		}
@@ -286,26 +216,7 @@ var main = new Ext.Panel({
 			layout: 'card',
 			items: [one],
 			cardSwitchAnimation : 'slide',
-			reverse: true,
-			scroll:'vertical'
-/*
-				listeners: {
-		scope: this,
-		orientationchange: function(panel, orientation){
-			if (orientation === "landscape") {
-				this.removeCls("portrait");
-				this.addCls("landscape");
-				alert("help");
-				console.log("rotated");
-			}
-			else {
-				this.removeCls("landscape");
-				this.addCls("portrait");
-				console.log("rotated");
-			}
-		}
-	}
-*/
+			reverse: true
 		});
 
 
@@ -322,15 +233,11 @@ Ext.setup({
 		rootPanel = new Ext.Panel({
 			fullscreen: true,
 			layout: 'card',
-			items: [one],
-			scroll:'vertical'
+			items: [one]
 		});
 
 		$('#lernWords').live('click', function(){
 			rootPanel.setActiveItem(cardOverview);
-		});
-		$('#readTexts').live('click', function(){
-			rootPanel.setActiveItem(textOverview);
 		});
 		if(!Ext.is.iPhone){
 			Ext.Msg.alert("Iphone", "This app is specially designed for iOS");

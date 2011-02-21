@@ -56,8 +56,8 @@ var cardViewClickHandler = function(button, event) {
 var one = {
 	style: "background: url('img/background.png')",
 	title: "one",
-	html: '<div id="wrapper"><div id="lernWords"><img class="intro" src="img/learnWordsBig.png"/></div><div id="readTexts"><img class="intro" src="img/readTextNewBig.png"/></div></div>',
-	
+	html: '<div id="lernWords"><img class="intro" src="img/learnWordsBig.png"/></div><div id="readTexts"><img class="intro" src="img/readTextNewBig.png"/></div>'
+	//html: '<img src="img/learnWordsBig.png"/><p><img src="img/learnWordsBig.png"/> ',
 };
 var two = {
 	style: "background-color: #FFBF00, color:white",
@@ -286,26 +286,7 @@ var main = new Ext.Panel({
 			layout: 'card',
 			items: [one],
 			cardSwitchAnimation : 'slide',
-			reverse: true,
-			scroll:'vertical'
-/*
-				listeners: {
-		scope: this,
-		orientationchange: function(panel, orientation){
-			if (orientation === "landscape") {
-				this.removeCls("portrait");
-				this.addCls("landscape");
-				alert("help");
-				console.log("rotated");
-			}
-			else {
-				this.removeCls("landscape");
-				this.addCls("portrait");
-				console.log("rotated");
-			}
-		}
-	}
-*/
+			reverse: true
 		});
 
 
@@ -322,8 +303,7 @@ Ext.setup({
 		rootPanel = new Ext.Panel({
 			fullscreen: true,
 			layout: 'card',
-			items: [one],
-			scroll:'vertical'
+			items: [one]
 		});
 
 		$('#lernWords').live('click', function(){
