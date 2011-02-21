@@ -72,7 +72,7 @@ var cardViewClickHandler = function(button, event) {
 var one = {
 	style: "background: url('img/background.png')",
 	title: "one",
-	html: '<div class="wrapper"><div id="lernWords"><img class="intro" src="img/learnWordsBig.png"/></div><div id="readTexts"><img class="intro" src="img/readTextNewBig.png"/></div></div>',
+	html: '<div class="wrapper"><div id="lernWords"><img class="intro" src="img/learnWordsBig.png"/></div><div id="readTexts"><img class="intro" src="img/readTextNewBig.png"/></div></div></div>',
 	
 };
 var two = {
@@ -168,7 +168,7 @@ var learningItemsBtn = {
 var cardViewItem1 = {
 	style : 'background: url("img/background.png")',
 	title: "card",
-	html: '<div id="showCardCreate"><img class="landscape-overview" src="img/CardOverviewBackground.png"/></div><section><title>Labas</title><details>Keistas</details></section>',
+	html: '<div class="wrapper"><div id="showCardCreate"><img class="landscape-overview" src="img/CardOverviewBackground.png"/></div><section><title>Labas</title><details>Keistas</details></section></div>',
 	listeners: {
 		click: {
 			element: 'body', //element: 'el', //bind to the underlying el property on the panel
@@ -184,18 +184,18 @@ var cardViewItem1 = {
 var cardViewItem2 = {
 	style : 'background: url("img/background.png")',
 	title: "card",
-	html: '<div id="showCardCreate"><img class="landscape-overview" src="img/CardOverviewBackground.png"/></div><section><title>Labas</title><details>Keistas</details></section>'
+	html: '<div class="wrapper"><div id="showCardCreate"><img class="landscape-overview" src="img/CardOverviewBackground.png"/></div><section><title>Labas</title><details>Keistas</details></section></div>'
 };
 
 var textViewItem1 = {
 	style : 'background: url("img/background.png")',
 	title: "card",
-	html: '<div id="textViewItem"><img class="landscape-overview" src="img/ReadTextNewBigBg.png"/></div><section><title>Labas</title><details>Keistas</details></section>'
+	html: '<div class="wrapper"><div id="textViewItem"><img class="landscape-overview" src="img/ReadTextNewBigBg.png"/></div><section><title>Labas</title><details>Keistas</details></section></div>'
 };
 var textViewItem2 = {
 	style : 'background: url("img/background.png")',
 	title: "card",
-	html: '<div id="textViewItem"><img class="landscape-overview" src="img/ReadTextNewBigBg.png"/></div><section><title>Labas</title><details>Keistas</details></section>'
+	html: '<div class="wrapper"><div id="textViewItem"><img class="landscape-overview" src="img/ReadTextNewBigBg.png"/></div><section><title>Labas</title><details>Keistas</details></section></div>'
 };
 var toolbarAddWord = {
 	html: '<div id="btn">+</div><div id="text">the text</div>',
@@ -218,7 +218,7 @@ var readingTextView = new Ext.Panel({
 var learningItemsFront = {
 	layout : 'card',
 	title: "card",
-html: '<div id="showCardCreate"><img class="landscape-overview" src="img/learningWordsBig.png"/></div><section class="asking"><title>Labas</title><details>Karte lernen</details></section>',	
+html: '<div class="wrapper"><div id="showCardCreate"><img class="landscape-overview" src="img/learningWordsBig.png"/></div><section class="asking"><title>Labas</title><details>Karte lernen</details></section>',	
 	listeners: {
 		'render': function(panel) {
                 panel.getEl().on({
