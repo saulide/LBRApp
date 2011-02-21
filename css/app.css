@@ -30,7 +30,7 @@ background-repeat: no-repeat;
 background-size: 100%;
 }
 */
-img.intro {
+.intro {
 	max-height:100%;
 	/*
 	width:100%;*/
@@ -41,7 +41,7 @@ img.intro {
 	margin-right: auto;
 }
 
-img.landscape-overview {
+.landscape-overview {
 	margin-top: 20%;
 	max-height:100%;
 	/*
@@ -62,9 +62,36 @@ section {
 	text-align: center;
 	
 }
+
+.landscape .landscape-overview {
+	margin-top:0;
+	max-height:100%;
+	/*
+	width:100%;*/
+	max-width: 100%;
+	display:block;
+	vertical-align: middle;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.landscape section {
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	top:2em;
+	left:6em;
+	text-align: center;
+	
+}
 section.asking {
 	top:5em;
 	left:2em;
+}
+.landscape section.asking {
+	top:2em;
+	left:2em;
+	text-align: center;
 }
 
 /*

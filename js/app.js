@@ -216,9 +216,10 @@ var readingTextView = new Ext.Panel({
 
 
 var learningItemsFront = {
+	style : 'background: url("img/background.png")',
 	layout : 'card',
 	title: "card",
-html: '<div class="wrapper"><div id="showCardCreate"><img class="landscape-overview" src="img/learningWordsBig.png"/></div><section class="asking"><title>Labas</title><details>Karte lernen</details></section>',	
+	html: '<div class="wrapper"><div id="showCardCreate"><img class="landscape-overview" src="img/learningWordsBig.png"/></div><section class="asking"><title>Labas</title><details>Karte lernen</details></section>',	
 	listeners: {
 		'render': function(panel) {
                 panel.getEl().on({
@@ -252,6 +253,7 @@ var cardOverview = new Ext.Carousel({
 			element: 'body', //element: 'el', //bind to the underlying el property on the panel
 			fn: function(){
 				console.log('click el');
+				setOrientationIntro();
 				rootPanel.setActiveItem(learnPanel, {
                 type: 'slide',
                 reverse: true
@@ -349,9 +351,11 @@ Ext.setup({
 		setOrientationIntro();
 		$('#lernWords').live('click', function(){
 			rootPanel.setActiveItem(cardOverview);
+			setOrientationIntro();
 		});
 		$('#readTexts').live('click', function(){
 			rootPanel.setActiveItem(textOverview);
+			setOrientationIntro();
 		});
 		if(!Ext.is.iPhone){
 			Ext.Msg.alert("Iphone", "This app is specially designed for iOS");
