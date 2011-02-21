@@ -322,8 +322,7 @@ Ext.setup({
 		rootPanel = new Ext.Panel({
 			fullscreen: true,
 			layout: 'card',
-			items: [one],
-			scroll:'vertical'
+			items: [one]
 		});
 
 		$('#lernWords').live('click', function(){
