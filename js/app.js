@@ -14,13 +14,25 @@ new Ext.Application({
 /*
  * Handlers
  */
+
+function setOrientationIntro()
+{
+	if (Ext.orientation === "landscape") {
+		$('.wrapper').addClass('landscape');
+	}
+	else {
+		$('.wrapper').removeClass('landscape');
+	}
+}
 var tapHander = function(button, event) {
+	setOrientationIntro();
 	rootPanel.setActiveItem(main, {
                 type: 'slide',
                 reverse: true
             });
 }
 var backBtnToOverview = function(button, event) {
+	setOrientationIntro();
 	rootPanel.setActiveItem(cardOverview, {
                 type: 'slide',
                 reverse: true
@@ -28,6 +40,7 @@ var backBtnToOverview = function(button, event) {
 }
 
 var backBtnToOverviewTextHandler = function(button, event) {
+	setOrientationIntro();
 	rootPanel.setActiveItem(textOverview, {
                 type: 'slide',
                 reverse: true
@@ -36,17 +49,20 @@ var backBtnToOverviewTextHandler = function(button, event) {
 
 
 var tapHanderTrue = function(button, event) {
+	setOrientationIntro();
 	rootPanel.setActiveItem(learningItemsFront, {
                 type: 'slide',
             });
 }
 var tapHanderFalse = function(button, event) {
+	setOrientationIntro();
 	rootPanel.setActiveItem(learningItemsFront, {
                 type: 'slide',
                 reverse: true
             });
 }
 var cardViewClickHandler = function(button, event) {
+	setOrientationIntro();
 		rootPanel.setActiveItem(main, {
                 type: 'slide',
                 reverse: true
@@ -56,7 +72,7 @@ var cardViewClickHandler = function(button, event) {
 var one = {
 	style: "background: url('img/background.png')",
 	title: "one",
-	html: '<div id="wrapper"><div id="lernWords"><img class="intro" src="img/learnWordsBig.png"/></div><div id="readTexts"><img class="intro" src="img/readTextNewBig.png"/></div></div>',
+	html: '<div class="wrapper"><div id="lernWords"><img class="intro" src="img/learnWordsBig.png"/></div><div id="readTexts"><img class="intro" src="img/readTextNewBig.png"/></div></div>',
 	
 };
 var two = {
@@ -287,25 +303,17 @@ var main = new Ext.Panel({
 			items: [one],
 			cardSwitchAnimation : 'slide',
 			reverse: true,
-			scroll:'vertical'
-/*
-				listeners: {
-		scope: this,
-		orientationchange: function(panel, orientation){
-			if (orientation === "landscape") {
-				this.removeCls("portrait");
-				this.addCls("landscape");
-				alert("help");
-				console.log("rotated");
+			listeners: {
+				scope: this,
+				orientationchange: function(panel, orientation){
+					if (orientation === "landscape") {
+						$('.wrapper').addClass('landscape');
+					}
+					else {
+						$('.wrapper').removeClass('landscape');
+					}
+				}
 			}
-			else {
-				this.removeCls("landscape");
-				this.addCls("portrait");
-				console.log("rotated");
-			}
-		}
-	}
-*/
 		});
 
 
@@ -322,9 +330,23 @@ Ext.setup({
 		rootPanel = new Ext.Panel({
 			fullscreen: true,
 			layout: 'card',
-			items: [one]
+			items: [one],
+			listeners: {
+				scope: this,
+				orientationchange: function(panel, orientation){
+					setOrientationIntro();
+/*
+					if (orientation === "landscape") {
+						$('.wrapper').addClass('landscape');
+					}
+					else {
+						$('.wrapper').removeClass('landscape');
+					}
+*/
+				}
+			}
 		});
-
+		setOrientationIntro();
 		$('#lernWords').live('click', function(){
 			rootPanel.setActiveItem(cardOverview);
 		});
