@@ -1,4 +1,12 @@
 @CHARSET "UTF-8";
+@font-face {  
+  font-family: hand-normal ;  
+  src: url( fonts/Blokletters-Balpen.ttf ) format("truetype");  
+} 
+@font-face {  
+  font-family: hand-bold ;  
+  src: url(fonts/Blokletters-Viltstift.ttf) format("truetype");  
+} 
 .wrapper{
 	margin-bottom:auto;
 }
@@ -59,7 +67,7 @@ section {
 	margin-right: auto;
 	top:2em;
 	left:2em;
-	text-align: center;
+	text-align: left;
 	
 }
 
@@ -104,3 +112,19 @@ section.asking {
 #btn, #text {
 	background-color: red;
 }
+header
+{
+	font-family: hand-bold;
+	font-size:  1em;
+}
+
+details
+{
+	font-family: hand-normal;
+	font-size:  0.8em;
+}
+details .antwort
+{
+	font-size:  1.2em;
+}
+

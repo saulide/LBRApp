@@ -168,7 +168,7 @@ var learningItemsBtn = {
 var cardViewItem1 = {
 	style : 'background: url("img/background.png")',
 	title: "card",
-	html: '<div class="wrapper"><div id="showCardCreate"><img class="landscape-overview" src="img/CardOverviewBackground.png"/></div><section><title>Labas</title><details>Keistas</details></section></div>',
+	html: '<div class="wrapper"><div id="showCardCreate"><img class="landscape-overview" src="img/CardOverviewBackground.png"/></div><section><header>First Cards</header><details>Card deck language:<br>German<br>Items to learn today: 2</details></section></div>',
 	listeners: {
 		click: {
 			element: 'body', //element: 'el', //bind to the underlying el property on the panel
@@ -184,18 +184,18 @@ var cardViewItem1 = {
 var cardViewItem2 = {
 	style : 'background: url("img/background.png")',
 	title: "card",
-	html: '<div class="wrapper"><div id="showCardCreate"><img class="landscape-overview" src="img/CardOverviewBackground.png"/></div><section><title>Labas</title><details>Keistas</details></section></div>'
+	html: '<div class="wrapper"><div id="showCardCreate"><img class="landscape-overview" src="img/CardOverviewBackground.png"/></div><section><header>PoshEng</header><details>Card deck language:<br>English<br>Items to learn today: 5</details></section></div>'
 };
 
 var textViewItem1 = {
 	style : 'background: url("img/background.png")',
 	title: "card",
-	html: '<div class="wrapper"><div id="textViewItem"><img class="landscape-overview" src="img/ReadTextNewBigBg.png"/></div><section><title>Labas</title><details>Keistas</details></section></div>'
+	html: '<div class="wrapper"><div id="textViewItem"><img class="landscape-overview" src="img/ReadTextNewBigBg.png"/></div><section><header>German History</header><details>Pages: <br>7<br>Already read: 2</details></section></div>'
 };
 var textViewItem2 = {
 	style : 'background: url("img/background.png")',
 	title: "card",
-	html: '<div class="wrapper"><div id="textViewItem"><img class="landscape-overview" src="img/ReadTextNewBigBg.png"/></div><section><title>Labas</title><details>Keistas</details></section></div>'
+	html: '<div class="wrapper"><div id="textViewItem"><img class="landscape-overview" src="img/ReadTextNewBigBg.png"/></div><section><header>China</header><details>Pages: 12<br>Already read: 6</details></section></div>'
 };
 var toolbarAddWord = {
 	html: '<div id="btn">+</div><div id="text">the text</div>',
@@ -219,15 +219,15 @@ var learningItemsFront = {
 	style : 'background: url("img/background.png")',
 	layout : 'card',
 	title: "card",
-	html: '<div class="wrapper"><div id="showCardCreate"><img class="landscape-overview" src="img/learningWordsBig.png"/></div><section class="asking"><title>Labas</title><details>Karte lernen</details></section>',	
+	html: '<div class="wrapper"><div id="showCardCreate"><img class="landscape-overview" src="img/learningWordsBig.png"/></div><section class="asking"><details class="antwort">Clean</details></section>',	
 	listeners: {
 		'render': function(panel) {
                 panel.getEl().on({
                     'click': function() {
-							$('details').text('hello');
+							$('.antwort').text('Waschen');
 					},
 					'swipe':function() {
-						
+						$('.antwort').text('Waschen (swiped)');
 					}
                 });
 				

@@ -2,6 +2,14 @@
 <head>
 <style type="text/css">
 @CHARSET "UTF-8";
+@font-face {  
+  font-family: hand-normal ;  
+  src: url( /fonts/Blokletters-Balpen.ttf ) format("truetype");  
+} 
+@font-face {  
+  font-family: hand-bold ;  
+  src: url(fonts/Blokletters-Viltstift.ttf) format("truetype");  
+} 
 .wrapper{
 	margin-bottom:auto;
 }
@@ -33,7 +41,7 @@ background-repeat: no-repeat;
 background-size: 100%;
 }
 */
-img.intro {
+.intro {
 	max-height:100%;
 	/*
 	width:100%;*/
@@ -44,7 +52,7 @@ img.intro {
 	margin-right: auto;
 }
 
-img.landscape-overview {
+.landscape-overview {
 	margin-top: 20%;
 	max-height:100%;
 	/*
@@ -67,10 +75,11 @@ section {
 }
 
 .landscape .landscape-overview {
-
+	margin-top:0;
+	max-height:100%;
 	/*
 	width:100%;*/
-	max-width: 3%;
+	max-width: 100%;
 	display:block;
 	vertical-align: middle;
 	margin-left: auto;
@@ -82,13 +91,18 @@ section {
 	margin-left: auto;
 	margin-right: auto;
 	top:2em;
-	left:2em;
+	left:6em;
 	text-align: center;
 	
 }
 section.asking {
 	top:5em;
 	left:2em;
+}
+.landscape section.asking {
+	top:2em;
+	left:2em;
+	text-align: center;
 }
 
 /*
@@ -101,6 +115,12 @@ section.asking {
 #btn, #text {
 	background-color: red;
 }
+details
+{
+	font-family: hand-bold;
+	font-size:  3em;
+}
+
 
 </style>
 </head>
