@@ -15,14 +15,14 @@ body {
 	width: 100%;
 }
 .portrait #lernWords,.portrait #readTexts
-{
+{	
 	width: 100%;
 	height: 50%;
 	
 }
 .landscape #lernWords,.landscape #readTexts
 {
-	margin-top:2em;
+	margin-top:3em;
 	display:inline;
 	width:49%;
 	float: left;
