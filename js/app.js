@@ -72,7 +72,7 @@ var cardViewClickHandler = function(button, event) {
 var one = {
 	style: "background: url('img/background.png')",
 	title: "one",
-	html: '<div class="wrapper"><div id="lernWords"><img class="intro" src="img/learnWordsBig.png"/></div><div id="readTexts"><img class="intro" src="img/readTextNewBig.png"/></div></div></div>',
+	html: '<div class="wrapper"><div id="lernWords"><img class="intro" src="img/learnWordsBig.png"/></div><div id="readTexts"><img class="intro" src="img/ReadTextNewBig.png"/></div></div></div>',
 	
 };
 var two = {
@@ -190,12 +190,12 @@ var cardViewItem2 = {
 var textViewItem1 = {
 	style : 'background: url("img/background.png")',
 	title: "card",
-	html: '<div class="wrapper"><div id="textViewItem"><img class="landscape-overview" src="img/readTextNewBigBg.png"/></div><section><header>German History</header><details>Pages: <br>7<br>Already read: 2</details></section></div>'
+	html: '<div class="wrapper"><div id="textViewItem"><img class="landscape-overview" src="img/ReadTextNewBigBg.png"/></div><section><header>German History</header><details>Pages: <br>7<br>Already read: 2</details></section></div>'
 };
 var textViewItem2 = {
 	style : 'background: url("img/background.png")',
 	title: "card",
-	html: '<div class="wrapper"><div id="textViewItem"><img class="landscape-overview" src="img/readTextNewBigBg.png"/></div><section><header>China</header><details>Pages: 12<br>Already read: 6</details></section></div>'
+	html: '<div class="wrapper"><div id="textViewItem"><img class="landscape-overview" src="img/ReadTextNewBigBg.png"/></div><section><header>China</header><details>Pages: 12<br>Already read: 6</details></section></div>'
 };
 var toolbarAddWord = {
 	
