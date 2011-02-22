@@ -198,17 +198,71 @@ var textViewItem2 = {
 	html: '<div class="wrapper"><div id="textViewItem"><img class="landscape-overview" src="img/ReadTextNewBigBg.png"/></div><section><header>China</header><details>Pages: 12<br>Already read: 6</details></section></div>'
 };
 var toolbarAddWord = {
-	html: '<div id="btn">+</div><div id="text">the text</div>',
-	dock: 'top'
+	
+	html: '<div id="btn"><img class="addIcon" src="img/addBig.png"></div><div id="text"><p>Haus</p></div>',
+	dock: 'top',
+	listeners: {
+		'render': function(panel) {
+				$('.addIcon').show();
+                panel.getEl().on({
+                    'click': function() {
+						$('.addIcon').hide();
+					}
+                });
+				
+          }
+	}
 }
 
 var readingTextTextItself = {
-	html : '<div>The big long text</div>',
+	style : 'background-color: white',
+	html : '<div id="readingText"><p>One of the challenges in setting up the Android project was figuring out how to best support the outside community--from the hobbiest community to large OEMs building mass-market consumer devices. We wanted components to be replaceable, and we wanted interesting components to be able to grow a life of their own outside of Android. We first chose a distributed revision control system, then further narrowed it down to Git.</p></div>',
+		listeners: {
+		'render': function(panel) {
+				$('.addIcon').show();
+                panel.getEl().on({
+                    'click': function() {
+						$('.addIcon').show();
+					}
+                });
+				
+          }
+	}
+}
+var readingTextTextItself2 = {
+	style : 'background-color: white',
+	html : '<div id="readingText"><p>A topic branch is not a copy of the original files; it is a pointer to a particular commit. This makes creating local branches and switching among them a light-weight operation. By using branches, you canisolateone aspect of your work from the others. For an interesting article about using topic branches, see Separating topic branches .</p></div>',
+		listeners: {
+		'render': function(panel) {
+				$('.addIcon').show();
+                panel.getEl().on({
+                    'click': function() {
+						$('.addIcon').show();
+					}
+                });
+				
+          }
+	}
+}
+var readingTextTextItself3 = {
+	style : 'background-color: white',
+	html : '<div id="readingText"><p>Deleting a client will permanently delete any changes you have not yet uploaded for review.Becauseall state information is stored in your client, you only need to delete the directory from your filesystem:</p></div>',
+		listeners: {
+		'render': function(panel) {
+				$('.addIcon').show();
+                panel.getEl().on({
+                    'click': function() {
+						$('.addIcon').show();
+					}
+                });
+				
+          }
+	}
 }
 
-var readingTextView = new Ext.Panel({
+var readingTextView = new Ext.Carousel({
 	fullscreen : true,
-	items : [readingTextTextItself],
+	items : [readingTextTextItself, readingTextTextItself2, readingTextTextItself3],
 	dockedItems : [backToolbarToOverviewText, toolbarAddWord]
 	
 });

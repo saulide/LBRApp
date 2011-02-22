@@ -108,9 +108,34 @@ section.asking {
 
 #btn {
 	float: right;
+	
 }
 #btn, #text {
-	background-color: red;
+	background-color: #d0d0d0;
+	height: 2em;
+}
+
+.addIcon
+{
+	height: 2.1em;
+	padding-right: 0.5em;
+}
+#readingText
+{
+	clear: both;
+	
+}
+#text p
+{
+	font-size: 1.6em;
+	padding-left: 0.5em;
+}
+#readingText p 
+{
+	font-size: 1em;
+	padding: 0.5em;
+	word-spacing:0.2em;
+	line-height: 1.5em;
 }
 header
 {
@@ -127,4 +152,3 @@ details .antwort
 {
 	font-size:  1.2em;
 }
-
