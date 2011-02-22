@@ -168,7 +168,7 @@ var learningItemsBtn = {
 var cardViewItem1 = {
 	style : 'background: url("img/background.png")',
 	title: "card",
-	html: '<div class="wrapper"><div id="showCardCreate"><img class="landscape-overview" src="img/CardOverviewBackground.png"/></div><section><header>First Cards</header><details>Card deck language:<br>German<br>Items to learn today: 2</details></section></div>',
+	html: '<div class="wrapper"><div id="showCardCreate"><img class="landscape-overview" src="img/cardOverviewBackground.png"/></div><section><header>First Cards</header><details>Card deck language:<br>German<br>Items to learn today: 2</details></section></div>',
 	listeners: {
 		click: {
 			element: 'body', //element: 'el', //bind to the underlying el property on the panel
@@ -184,18 +184,18 @@ var cardViewItem1 = {
 var cardViewItem2 = {
 	style : 'background: url("img/background.png")',
 	title: "card",
-	html: '<div class="wrapper"><div id="showCardCreate"><img class="landscape-overview" src="img/CardOverviewBackground.png"/></div><section><header>PoshEng</header><details>Card deck language:<br>English<br>Items to learn today: 5</details></section></div>'
+	html: '<div class="wrapper"><div id="showCardCreate"><img class="landscape-overview" src="img/cardOverviewBackground.png"/></div><section><header>PoshEng</header><details>Card deck language:<br>English<br>Items to learn today: 5</details></section></div>'
 };
 
 var textViewItem1 = {
 	style : 'background: url("img/background.png")',
 	title: "card",
-	html: '<div class="wrapper"><div id="textViewItem"><img class="landscape-overview" src="img/ReadTextNewBigBg.png"/></div><section><header>German History</header><details>Pages: <br>7<br>Already read: 2</details></section></div>'
+	html: '<div class="wrapper"><div id="textViewItem"><img class="landscape-overview" src="img/readTextNewBigBg.png"/></div><section><header>German History</header><details>Pages: <br>7<br>Already read: 2</details></section></div>'
 };
 var textViewItem2 = {
 	style : 'background: url("img/background.png")',
 	title: "card",
-	html: '<div class="wrapper"><div id="textViewItem"><img class="landscape-overview" src="img/ReadTextNewBigBg.png"/></div><section><header>China</header><details>Pages: 12<br>Already read: 6</details></section></div>'
+	html: '<div class="wrapper"><div id="textViewItem"><img class="landscape-overview" src="img/readTextNewBigBg.png"/></div><section><header>China</header><details>Pages: 12<br>Already read: 6</details></section></div>'
 };
 var toolbarAddWord = {
 	
@@ -412,7 +412,7 @@ Ext.setup({
 			setOrientationIntro();
 		});
 		if(!Ext.is.iPhone){
-			Ext.Msg.alert("Iphone", "This app is specially designed for iOS");
+			Ext.Msg.alert("Warning", "This app is specially designed for iOS 4.0");
 		}
 		
 	}
