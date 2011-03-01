@@ -15,6 +15,10 @@ new Ext.Application({
  * Handlers
  */
 
+var spacer ={
+	xtype:'spacer'
+};
+
 function setOrientationIntro()
 {
 	if (Ext.orientation === "landscape") {
@@ -109,19 +113,19 @@ var carussel = new Ext.Carousel({
 // Items ( demo items)
 
 var backBtnToMenu = {
-	text: 'menu',
+	text: 'Menu',
 	ui:'back',
 	handler: tapHander	
 }
 
 var backBtnToOverview = {
-	text: 'quit lerning',
+	text: 'Quit lerning',
 	ui:'back',
 	handler: backBtnToOverview	
 }
 
 var backBtnToOverviewText = {
-	text: 'quit reading',
+	text: 'Quit reading',
 	ui:'back',
 	handler: backBtnToOverviewTextHandler	
 }
@@ -134,6 +138,16 @@ var learningItemsFalseBtn = {
 	text: 'Repeat it',
 	ui:'decline',
 	handler: tapHanderFalse		
+}
+
+var helpBtn = {
+	text: "Help",
+	ui:"Action",
+	handler: showHelp
+}
+
+function showHelp(){
+	Ext.Msg.alert("Help", 'If you tap a word in text, the translation will be shown in translation bar. Click on <img class="helpIcon" src="img/addBig.png"/> icon to add the word to your card deck. If you want to remove the word from card deck that you just added click on <img class="helpIcon" src="img/deleteBig.png"/> icon');
 }
 
 var backToolbarToMenu = {
@@ -149,17 +163,19 @@ var backToolbarToOverview = {
 	dock: 'top'
 };
 
+
 var backToolbarToOverviewText = {
 	xtype: 'toolbar',
 	ui:'light',
-	items: [backBtnToOverviewText],
+	items: [backBtnToOverviewText,spacer, helpBtn],
 	dock: 'top'
 };
+
 
 var learningItemsBtn = {
 	xtype: 'toolbar',
 	ui:'light',
-	items: [learningItemsTrueBtn, learningItemsFalseBtn],
+	items: [learningItemsTrueBtn,spacer, learningItemsFalseBtn],
 	dock: 'bottom'
 };
 
@@ -203,10 +219,12 @@ var toolbarAddWord = {
 	dock: 'top',
 	listeners: {
 		'render': function(panel) {
-				$('.addIcon').show();
+				$('#text p').text('Translation Bar');
+				$('.addIcon').hide();
                 panel.getEl().on({
                     'click': function() {
-						$('.addIcon').hide();
+						$('.addIcon').show();
+						$('.addIcon').attr("src", "img/deleteBig.png");
 					}
                 });
 				
@@ -216,13 +234,17 @@ var toolbarAddWord = {
 
 var readingTextTextItself = {
 	style : 'background-color: white',
-	html : '<div id="readingText"><p>One of the challenges in setting up the Android project was figuring out how to best support the outside community--from the hobbiest community to large OEMs building mass-market consumer devices. We wanted components to be replaceable, and we wanted interesting components to be able to grow a life of their own outside of Android. We first chose a distributed revision control system, then further narrowed it down to Git.</p></div>',
+	html : '<div id="readingText"><p>One of the <span class="translate">challenges</span> in setting up the Android project was figuring out how to best support the outside community--from the hobbiest community to large OEMs building mass-market consumer devices. We wanted components to be replaceable, and we wanted interesting components to be able to grow a life of their own outside of Android. We first chose a distributed revision control system, then further narrowed it down to Git.</p></div>',
 		listeners: {
 		'render': function(panel) {
 				$('.addIcon').show();
                 panel.getEl().on({
                     'click': function() {
 						$('.addIcon').show();
+						$('.addIcon').attr("src", "img/addBig.png");
+						$('.translate').css('border-bottom','3px solid red');
+						$('#text p').text('Der Anruf');
+						
 					}
                 });
 				
@@ -231,13 +253,16 @@ var readingTextTextItself = {
 }
 var readingTextTextItself2 = {
 	style : 'background-color: white',
-	html : '<div id="readingText"><p>A topic branch is not a copy of the original files; it is a pointer to a particular commit. This makes creating local branches and switching among them a light-weight operation. By using branches, you canisolateone aspect of your work from the others. For an interesting article about using topic branches, see Separating topic branches .</p></div>',
+	html : '<div id="readingText"><p>A topic <span class="translate2">branch</span> is not a copy of the original files; it is a pointer to a particular commit. This makes creating local branches and switching among them a light-weight operation. By using branches, you canisolateone aspect of your work from the others. For an interesting article about using topic branches, see Separating topic branches .</p></div>',
 		listeners: {
 		'render': function(panel) {
 				$('.addIcon').show();
                 panel.getEl().on({
                     'click': function() {
 						$('.addIcon').show();
+						$('.addIcon').attr("src", "img/addBig.png");
+						$('.translate2').css('border-bottom','3px solid red');
+						$('#text p').text('Der Abzweig');
 					}
                 });
 				
@@ -332,7 +357,10 @@ var textOverview = new Ext.Carousel({
                 	type: 'slide',
                		reverse: false
        			}
+				
 			);
+			$('#text p').text('Translation bar');
+				$('.addIcon').hide();
 			}
 		}
 	}

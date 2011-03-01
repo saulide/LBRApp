@@ -156,3 +156,10 @@ details
 {
 	font-size:  3em;
 }
+
+.helpIcon {
+	height: 19px;
+}
+#readingTexts .translate {
+	display:inline;
+}
