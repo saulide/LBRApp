@@ -310,7 +310,7 @@ var cardOverview = new Ext.Carousel({
 				setOrientationIntro();
 				rootPanel.setActiveItem(learnPanel, {
                 type: 'slide',
-                reverse: true
+                reverse: false
        		}
 			);
 			}

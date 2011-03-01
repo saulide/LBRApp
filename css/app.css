@@ -14,6 +14,10 @@ body {
 	height:100%;
 	width: 100%;
 }
+
+p {
+	font-family: Helvetica Neue, Helvetica ,Arial, sans-serif;
+}
 .portrait #lernWords,.portrait #readTexts
 {	
 	width: 100%;
@@ -148,7 +152,7 @@ details
 	font-family: hand-normal;
 	font-size:  0.8em;
 }
-details .antwort
+.antwort
 {
-	font-size:  1.2em;
+	font-size:  3em;
 }
